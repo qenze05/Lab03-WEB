@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>Lab02</title>
+
+    <link rel="stylesheet" type="text/css" href="main.css"/>
+</head>
+
+<body style="background-color: darkgray">
+<script src="script.js"></script>
+
+<div class="product-list" id="product-list">
+
+    <section class="add-product">
+        <form class="form" id="form">
+            <label>
+                <input id="input" class="text-area" type="text" name="product-name" placeholder="Назва товару"/>
+            </label>
+            <button id="button" class="add-button fade" type="submit" data-tooltip="Додати продукт">Додати</button>
+        </form>
+    </section>
+
+    <script>{
+        addSavedElements();
+        updateStorage();
+        document.getElementById("input").select()
+    }</script>
+
+    <span id="items"></span>
+</div>
+
+<div id="summary" class="summary-list">
+    <section class="summary-element">
+        <h1>Залишилося</h1>
+    </section>
+
+    <hr class="separator"/>
+
+    <section id="not-bought" class="summary-element">
+        <span class="summary-item">
+            Печиво
+            <span class="summary-circle">2</span>
+        </span>
+        <span class="summary-item">
+            Сир
+            <span class="summary-circle">1</span>
+        </span>
+    </section>
+
+    <hr class="separator"/>
+
+    <section class="summary-element">
+        <h1>Куплено</h1>
+    </section>
+
+    <hr class="separator"/>
+
+    <section id="bought" class="summary-element">
+        <span class="summary-item">
+            <span style="text-decoration: line-through">Помідори</span>
+            <span class="summary-circle">2</span>
+        </span>
+    </section>
+
+    <script>{
+        updateStorage();
+    }</script>
+</div>
+
+<section class="badge">
+    <span class="buy-list">Buy List</span>
+    <span class="created-by">Created by:</span>
+    <span class="creator-name">Oleksandr Kataskin</span>
+</section>
+</body>
+</html>

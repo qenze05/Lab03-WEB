@@ -1,0 +1,399 @@
+body {
+    background-color: lightgray;
+    font-family: Arial, serif;
+    justify-content: center;
+    display: flex;
+    gap: 30px;
+    height: 100%;
+    padding: 20px;
+}
+
+.product-list {
+    background-color: white;
+    width: 50%;
+    height: 70px;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.summary-list {
+    user-select: none;
+    background-color: white;
+    width: 30%;
+    height: 250px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.summary-element {
+    width: 100%;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+}
+
+.summary-item {
+    width: fit-content;
+    flex-shrink: 0;
+
+
+    background-color: lightgray;
+    border-radius: 4px;
+    padding: 7px;
+    margin: 2px;
+}
+
+.summary-circle {
+    display: inline-block;
+    background-color: darkorange;
+    color: white;
+
+    user-select: none;
+    border-radius: 15px;
+    justify-content: center;
+    text-align: center;
+    padding: 2px;
+
+    height: 20px;
+    width: 20px;
+
+    border: 0 solid transparent;
+    box-shadow: inset 0 -3px rgba(0, 0, 0, 25%);
+}
+
+.add-product {
+    font-size: 0;
+    width: 100%;
+    height: 75px;
+    text-align: center;
+    display: flex;
+}
+
+.form {
+    align-items: stretch;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+}
+
+.add-button {
+    padding: 5px;
+
+    width: 20%;
+    height: 100%;
+
+    background-color: dodgerblue;
+    color: white;
+
+    font-weight: bold;
+    font-size: medium;
+
+    border-radius: 0 5px 5px 0;
+    border: 0 solid transparent;
+    box-shadow: inset 0 -3px rgba(0, 0, 0, 25%);
+
+}
+
+.text-area {
+    padding: 5px;
+
+    width: 75%;
+    height: 85%;
+
+    opacity: 50%;
+
+    margin: auto;
+
+    font-size: medium;
+
+    border-radius: 5px 0 0 5px;
+    border: 0 solid transparent;
+    box-shadow: inset 0 0 0 1px gray;
+}
+
+hr.separator {
+    border: 1px solid rgba(0, 0, 0, 15%);
+    border-radius: 2px;
+}
+
+.table-element {
+
+    width: 100%;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.amount-container {
+
+    width: 33%;
+
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 5px;
+}
+
+.button-container {
+    width: 33%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+    width: 33%;
+    height: 100%;
+}
+
+.input-item {
+    width: 50%;
+
+    font-size: small;
+
+    padding: 5px;
+    border: 0 solid transparent;
+    box-shadow: inset 0 0 0 1px gray;
+}
+
+.amount {
+
+    background-color: #e8e8e8;
+    border-radius: 4px;
+
+    justify-content: center;
+    text-align: center;
+    padding: 2px;
+
+    height: 20px;
+    width: 20px;
+}
+
+.plus-circle {
+    background-color: green;
+    color: white;
+
+    user-select: none;
+    border-radius: 15px;
+    padding-bottom: 5px;
+
+    height: 24px;
+    width: 24px;
+
+    border: 0 solid transparent;
+    box-shadow: inset 0 -3px rgba(0, 0, 0, 25%)
+}
+
+.minus-circle {
+    background-color: red;
+    color: white;
+
+    user-select: none;
+    border-radius: 15px;
+    padding-bottom: 5px;
+
+    height: 24px;
+    width: 24px;
+
+    border: 0 solid transparent;
+    box-shadow: inset 0 -3px rgba(0, 0, 0, 25%)
+}
+
+.button {
+
+    float: right;
+    user-select: none;
+
+    width: 70%;
+    height: 100%;
+    background-color: #f2f2f2;
+
+    font-size: small;
+
+    border-radius: 5px 5px 5px 5px;
+    border: 0 solid transparent;
+    box-shadow: inset 0 -3px rgba(0, 0, 0, 25%);
+}
+
+.delete {
+
+    float: right;
+    user-select: none;
+
+    width: 20%;
+    height: 100%;
+
+    background-color: red;
+    color: white;
+    margin-left: 5px;
+
+    font-size: small;
+
+    border-radius: 5px 5px 5px 5px;
+    border: 0 solid transparent;
+    box-shadow: inset 0 -3px rgba(0, 0, 0, 25%);
+}
+
+.button:hover{
+    transform: scale(1.03)
+
+}
+
+.delete:hover{
+    transform: scale(1.03)
+}
+
+.add-button:hover{
+    transform: scale(1.03)
+}
+
+.plus-circle:hover{
+    transform: scale(1.03)
+}
+
+.minus-circle:hover{
+    transform: scale(1.03)
+}
+
+.delete:active {
+    transform: scale(.98)
+}
+
+.plus-circle:active {
+    transform: scale(.98)
+}
+
+.minus-circle:active {
+    transform: scale(.98)
+}
+
+.add-button:active {
+    transform: scale(.98)
+}
+
+.button:active {
+    transform: scale(.98)
+}
+
+@media (max-width: 750px) {
+    body {
+        flex-direction: column;
+        align-items: center;
+        min-width: 370px;
+    }
+
+    .product-list {
+        width: 90%;
+    }
+    .summary-list {
+        width: 90%;
+    }
+}
+
+.button,
+.delete,
+.add-button{
+    position: relative;
+}
+.button:before,
+.add-button:before,
+.delete:before {
+    display: block;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+}
+
+.button:before,
+.delete:before,
+.add-button:before{
+    background: rgba(160,78,180,.75);
+    border-radius: 10px;
+    color: #fff;
+    content: attr(data-tooltip);
+    font-size: 14px;
+    padding: 6px 10px;
+    top: -35px;
+    white-space: nowrap;
+}
+
+.button.fade:before,
+.add-button.fade:before,
+.delete.fade:before{
+    transform: translate3d(0,10px,0);
+    transition: all .3s ease-in-out;
+}
+
+.button.fade:hover:before,
+.add-button.fade:hover:before,
+.delete.fade:hover:before{
+    opacity: 1;
+    transform: translate3d(0,0,0);
+}
+
+.badge {
+    width:100px;
+    height:100px;
+
+    position: fixed;
+
+    bottom: -83px;
+    left: 50px;
+
+    background-color: blueviolet;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 10px 10px 0 0;
+    border: blueviolet solid 5px;
+    padding:10px;
+    transition: all .5s ease-in-out;
+}
+
+.created-by {
+    margin-top: 15px;
+    font-size: small;
+}
+
+.buy-list {
+    font-size: large;
+    font-weight: bold;
+}
+
+.badge:hover {
+    bottom: -20px;
+    background-color: darkmagenta;
+    border: darkmagenta solid 5px;
+}
+
+@media print {
+    .badge{
+        position: fixed;
+        bottom: -40px;
+        border: 5px solid blueviolet;
+        background-color: white;
+    }
+    .buy-list {
+        visibility: hidden;
+        display: none;
+    }
+}
+
+
