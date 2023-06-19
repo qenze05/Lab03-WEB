@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "        </span>\n" +
             "\n" +
             "        <span id=\"button-container-"+localStorage.length+"\""+" class=\"button-container\">\n" +
-            "            <button id=\"buy-"+localStorage.length+"\""+" class=\"button fade\" data-tooltip=\"Не куплено\">Не куплено</button>\n" +
+            "            <button id=\"buy-"+localStorage.length+"\""+" class=\"button fade\" data-tooltip=\"Куплено\">Куплено</button>\n" +
             "            <button id=\"delete-"+localStorage.length+"\""+" class=\"delete fade\" data-tooltip=\"Видалити продукт\">X</button>\n" +
             "        </span>\n" +
             "    </section>" +
@@ -154,7 +154,7 @@ function changeItemStateToBought(i) {
     name.style.textDecoration = "line-through";
 
     let buttonContainer = document.getElementById("button-container-"+i);
-    buttonContainer.innerHTML = " <button id=\"removeFromBought-"+i+"\" class=\"button fade\" data-tooltip=\"Куплено\">Куплено</button>"
+    buttonContainer.innerHTML = " <button id=\"removeFromBought-"+i+"\" class=\"button fade\" data-tooltip=\"Не куплено\">Не куплено</button>"
 
     let newButton = document.getElementById("removeFromBought-"+i);
     addRemoveFromBoughtButtonListener(newButton, i);
@@ -164,7 +164,7 @@ function changeItemStateToBought(i) {
 
 function addRemoveFromBoughtButtonListener(button, i) {
     button.addEventListener("click", function() {
-        document.getElementById("button-container-"+i).innerHTML = "<button id=\"buy-"+i+"\""+" class=\"button fade\" data-tooltip=\"Не куплено\">Не куплено</button>\n" +
+        document.getElementById("button-container-"+i).innerHTML = "<button id=\"buy-"+i+"\""+" class=\"button fade\" data-tooltip=\"Куплено\">Куплено</button>\n" +
             "            <button id=\"delete-"+i+"\""+" class=\"delete fade\" data-tooltip=\"Видалити продукт\">X</button>";
         document.getElementById("amount-container-"+i).innerHTML = "<button id=\"minus-"+i+"\""+" class=\"minus-circle\" style=\"background-color: #e5a1a1\">-</button>\n" +
             "            <span id=\"amount-"+i+"\""+" class=\"amount\">"+document.getElementById("amount-"+i).textContent+"</span>\n" +
@@ -275,7 +275,7 @@ function addSavedElements() {
             "        </span>\n" +
             "\n" +
             "        <span id=\"button-container-0\" class=\"button-container\">\n" +
-            "            <button id=\"buy-0\" class=\"button fade\" data-tooltip=\"Не куплено\">Не куплено</button>\n" +
+            "            <button id=\"buy-0\" class=\"button fade\" data-tooltip=\"Куплено\">Куплено</button>\n" +
             "            <button id=\"delete-0\" class=\"delete fade\" data-tooltip=\"Видалити продукт\">X</button>\n" +
             "        </span>\n" +
             "    </section>" +
@@ -293,7 +293,7 @@ function addSavedElements() {
             "        </span>\n" +
             "\n" +
             "        <span id=\"button-container-1\" class=\"button-container\">\n" +
-            "           <button id=\"buy-1\" class=\"button fade\" data-tooltip=\"Не куплено\">Не куплено</button>\n" +
+            "           <button id=\"buy-1\" class=\"button fade\" data-tooltip=\"Куплено\">Куплено</button>\n" +
             "            <button id=\"delete-1\" class=\"delete fade\" data-tooltip=\"Видалити продукт\">X</button>\n" +
             "        </span>\n" +
             "    </section>" +
@@ -311,7 +311,7 @@ function addSavedElements() {
             "        </span>\n" +
             "\n" +
             "        <span id=\"button-container-2\" class=\"button-container\">\n" +
-            "            <button id=\"buy-2\" class=\"button fade\" data-tooltip=\"Не куплено\">Не куплено</button>\n" +
+            "            <button id=\"buy-2\" class=\"button fade\" data-tooltip=\"Куплено\">Куплено</button>\n" +
             "            <button id=\"delete-2\" class=\"delete fade\" data-tooltip=\"Видалити продукт\">X</button>\n" +
             "        </span>\n" +
             "    </section>" +
