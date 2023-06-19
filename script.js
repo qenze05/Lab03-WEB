@@ -275,7 +275,6 @@ function updateHtml() {
 
             container.innerHTML = item.outerHTML + container.innerHTML;
         }else{
-            console.log("not bought state");
             let item = document.createElement("span");
 
             item.innerHTML = notBoughtItem.innerHTML;
