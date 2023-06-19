@@ -12,17 +12,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    // Send data when Enter key is pressed
     textInput.addEventListener("keypress", function (event) {
         if (event.key === "Enter" && textInput.value !== "") {
+            if(checkForSimilarNames(textInput.value)) return;
             event.preventDefault();
             sendData();
         }
     });
 
-    //Send data when Send button is clicked
     addButton.addEventListener("click", function () {
         if (textInput.value !== "") {
+            if(checkForSimilarNames(textInput.value)) return;
             sendData();
         }
     });
@@ -126,6 +126,7 @@ function addNameListener(name, i) {
         nameInput.select();
         nameInput.addEventListener("keypress", function(event) {
             if (event.key === "Enter" && nameInput.value !== "") {
+                if(checkForSimilarNames(document.getElementById("nameInput-"+i).value)) return;
                 nameInput.parentElement.outerHTML = nameHTML;
                 name = document.getElementById("name-"+i);
                 name.textContent = nameInput.value;
@@ -134,6 +135,7 @@ function addNameListener(name, i) {
             }
         })
         nameInput.addEventListener("focusout", function () {
+            if(checkForSimilarNames(document.getElementById("nameInput-"+i).value)) return;
             nameInput.parentElement.outerHTML = nameHTML;
             name = document.getElementById("name-"+i);
             name.textContent = nameInput.value;
@@ -184,7 +186,6 @@ function setMinusColor(i) {
     else document.getElementById("minus-"+i).style.backgroundColor = "red";
 }
 function addItemToLocalStorage(item) {
-    console.log(item);
     localStorage.setItem("product-" + localStorage.length, item);
 }
 
@@ -213,7 +214,7 @@ function updateSummary() {
             let name = document.getElementById("name-"+i);
             let amount =  document.getElementById("amount-"+i);
             if(name.style.textDecoration === "line-through") {
-                if(boughtCounter > 4) {
+                if(boughtCounter > 2) {
                     document.getElementById("summary").style.height = (document.getElementById("summary").offsetHeight + 60) + "px";
                     document.getElementById("bought").style.height = (document.getElementById("bought").offsetHeight + 60) + "px";
                     document.getElementById("bought").innerHTML += "<div class=\"break\"></div>"
@@ -225,7 +226,7 @@ function updateSummary() {
                     "        </span>"
                 boughtCounter++;
             }else{
-                if(notBoughtCounter > 4) {
+                if(notBoughtCounter > 2) {
                     document.getElementById("summary").style.height = (document.getElementById("summary").offsetHeight + 60) + "px";
                     document.getElementById("not-bought").style.height = (document.getElementById("not-bought").offsetHeight + 60) + "px";
                     document.getElementById("not-bought").innerHTML += "<div class=\"break\"></div>"
@@ -240,6 +241,20 @@ function updateSummary() {
         }
 
     }
+}
+
+function checkForSimilarNames(name) {
+    for(let i = 0; i < localStorage.length; i++) {
+        if(localStorage.getItem("product-"+i) !== null) {
+            let html = document.createElement("div");
+            html.innerHTML = localStorage.getItem("product-"+i);
+            if(html.children.item(0) !== null) {
+                if(html.children.item(0).children.item(1).children.item(0).textContent == name) return true;
+            }
+
+        }
+    }
+    return false;
 }
 
 function addSavedElements() {
